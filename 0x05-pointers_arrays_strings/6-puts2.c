@@ -1,24 +1,21 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * rev_string - function that reverses a string.
- * @s: declaration of *s and paramters for the function
+ * puts2 - func that prints 1 char/2 of a string, followed by a new line.
+ * @str: declaration of str and paramters for the function puts2
  * Return: Always 0.
  */
-void rev_string(char *s)
+void puts2(char *str)
 {
-	int f, r_s;
-	char character;
+	int c;
+	char l;
 
-	for (f = '\0'; s[f] != 0; f++)
+	for (c = 0; str[c] != 0; c++)
 	{
+		if (c % 2 == 0)
+		{
+			l = str[c];
+			_putchar(l);
+		}
 	}
-	r_s = 0;
-	for (f = f - 1; r_s < f; r_s++)
-	{
-		character = s[f];
-		s[f] = s[r_s];
-		s[r_s] = character;
-		f--;
-	}
+	_putchar('\n');
 }
-
