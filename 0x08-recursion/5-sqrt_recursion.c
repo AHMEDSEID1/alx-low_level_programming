@@ -18,6 +18,12 @@ int _sqrt_recursion(int n)
 		return (helper(n, 1));
 }
 
+/**
+ * helper - blank
+ * @n: number
+ * @i: incrementor
+ * Return: -1;
+ */
 
 int helper(int n, int i)
 {
