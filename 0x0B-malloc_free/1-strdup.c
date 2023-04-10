@@ -1,34 +1,35 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * _strdup - check the code
- * @str: argument for array
- * Return: Always 0.
+ *_strdup- duplicates the string
+ *@str: checked
+ *
+ *Return: array
  */
+
 char *_strdup(char *str)
 {
-	char *my_array;
+	char *duplicate;
+
 	int i, len = 0;
 
-	my_array = malloc((len + 1) * sizeof(char));
 
-	i = len = 0;
-	while (str[i] != '\0')
-	{
-		len++;
-		i++;
-	}
-
-	if (my_array == NULL)
+	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (str[i] != '\0')
-	{
-		my_array[i] = str[i];
-		i++;
-	}
 
-	return (my_array);
+	for (i = 0; str[i]; i++)
+		len++;
+
+	duplicate = malloc(sizeof(char) * (len + 1));
+
+	if (duplicate == NULL)
+
+		return (NULL);
+	for (i = 0; str[i]; i++)
+		duplicate[i] = str[i];
+
+	duplicate[len] = '\0';
+
+	return (duplicate);
 }
