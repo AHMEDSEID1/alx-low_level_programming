@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints numbers in two, two digit number
+ * main - prints numbers in two, two digit number from 0 to 99 
  * Description: using main function
  *
  * This program prints numbers 0 to 99 in two, two digit

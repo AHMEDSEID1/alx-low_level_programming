@@ -1,7 +1,8 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * main - Entry point
- * Description: 'prints _putchar to stdout'
+ * Description: 'prints _putchar to stdiout'
  * Return: always 0
  */
 
