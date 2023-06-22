@@ -1,0 +1,1 @@
+strech to variadic fun
