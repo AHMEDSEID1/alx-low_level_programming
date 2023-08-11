@@ -128,10 +128,3 @@ void print_osabi(unsigned char e_osabi)
 	}
 }
 
-/* A function to print the ABI version of the file*/
-void print_abiversion(unsigned char e_abiversion)
-{
-
-	printf("ABI Version:                       %d\n", e_abiversion);
-}
-
