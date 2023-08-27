@@ -1,30 +1,39 @@
 #include <stdio.h>
+
 /**
- * main - prints numbers in two, two digit number from 0 to 99 
- * Description: using main function
- *
- * This program prints numbers 0 to 99 in two, two digit
+ * main - prints all possible combinations of two two-digit numbers
  * Return: 0
  */
 int main(void)
 {
-	int i, j;
+	int num1, num2;
 
-	for (i = 0; i < 100; i++)
-		for (j = i + 1; j < 100; j++)
+	for (num1 = 0; num1 <= 99; num1++)
+	{
+		for (num2 = 0; num2 <= 99; num2++)
 		{
-		putchar(i / 10 + '0');
-		putchar(i % 10 + '0');
-		putchar(' ');
-		putchar(j / 10 + '0');
-		putchar(j % 10 + '0');
+		int num1_d1 = num1 / 10;
+		int num1_d2 = num1 % 10;
+		int num2_d1 = num2 / 10;
+		int num2_d2 = num2 % 10;
 
-		if (i != 98 || j != 99)
+		if (num1 != num2)
 		{
-			putchar(',');
+			putchar(num1_d1 + '0');
+			putchar(num1_d2 + '0');
 			putchar(' ');
+			putchar(num2_d1 + '0');
+			putchar(num2_d2 + '0');
+
+			if (num1 != 99 || num2 != 98)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		}
 		}
 	}
+
+	putchar('\n');
 	return (0);
 }
-
