@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+/**
+ * is_palindrome - Check if a number is a palindrome.
+ * @num: The number to check.
+ *
+ * Return: 1 if the number is a palindrome, 0 otherwise.
+ */
+int is_palindrome(int num)
+{
+	int reverse = 0;
+	int original = num;
+
+	while (num > 0)
+	{
+		int digit = num % 10;
+		reverse = reverse * 10 + digit;
+		num /= 10;
+	}
+
+	return original == reverse;
+}
+
+/**
+ * main - Entry point of the program.
+ *
+ * Return: 0 on success.
+ */
+int main(void)
+{
+	int largest_palindrome = 0;
+
+	/* Iterate through all possible combinations of two 3-digit numbers */
+	for (int i = 100; i < 1000; i++)
+	{
+		for (int j = 100; j < 1000; j++)
+		{
+			int product = i * j;
+			if (is_palindrome(product) && product > largest_palindrome)
+			{
+				largest_palindrome = product;
+			}
+		}
+	}
+
+	/* Save the result in the file */
+	FILE *file = fopen("102-result", "w");
+	if (file != NULL)
+	{
+		fprintf(file, "%d", largest_palindrome);
+		fclose(file);
+	}
+
+	return 0;
+}
