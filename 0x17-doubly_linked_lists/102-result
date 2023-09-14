@@ -8,17 +8,17 @@
  */
 int is_palindrome(int num)
 {
-	int reverse = 0;
-	int original = num;
+    int reverse = 0;
+    int original = num;
 
-	while (num > 0)
-	{
-		int digit = num % 10;
-		reverse = reverse * 10 + digit;
-		num /= 10;
-	}
+    while (num > 0)
+    {
+        int digit = num % 10;
+        reverse = reverse * 10 + digit;
+        num /= 10;
+    }
 
-	return original == reverse;
+    return original == reverse;
 }
 
 /**
@@ -28,28 +28,28 @@ int is_palindrome(int num)
  */
 int main(void)
 {
-	int largest_palindrome = 0;
+    int largest_palindrome = 0;
 
-	/* Iterate through all possible combinations of two 3-digit numbers */
-	for (int i = 100; i < 1000; i++)
-	{
-		for (int j = 100; j < 1000; j++)
-		{
-			int product = i * j;
-			if (is_palindrome(product) && product > largest_palindrome)
-			{
-				largest_palindrome = product;
-			}
-		}
-	}
+    /* Iterate through all possible combinations of two 3-digit numbers */
+    for (int i = 100; i < 1000; i++)
+    {
+        for (int j = 100; j < 1000; j++)
+        {
+            int product = i * j;
+            if (is_palindrome(product) && product > largest_palindrome)
+            {
+                largest_palindrome = product;
+            }
+        }
+    }
 
-	/* Save the result in the file */
-	FILE *file = fopen("102-result", "w");
-	if (file != NULL)
-	{
-		fprintf(file, "%d", largest_palindrome);
-		fclose(file);
-	}
+    /* Save the result in the file */
+    FILE *file = fopen("102-result", "w");
+    if (file != NULL)
+    {
+        fprintf(file, "%d", largest_palindrome);
+        fclose(file);
+    }
 
-	return 0;
+    return 0;
 }
